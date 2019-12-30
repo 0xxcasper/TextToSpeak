@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bsA-rO-7cO">
-                    <rect key="frame" x="0.0" y="82" width="414" height="730"/>
+                    <rect key="frame" x="0.0" y="93" width="414" height="719"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KIf-Hv-ou8" customClass="ControlBar" customModule="TextToSpeak" customModuleProvider="target">
@@ -35,10 +35,10 @@
                     </constraints>
                 </view>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tap here to type!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZZO-Wv-jph">
-                    <rect key="frame" x="8" y="52" width="398" height="27"/>
+                    <rect key="frame" x="8" y="52" width="398" height="33"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="27" id="R5w-qG-f7Z"/>
+                        <constraint firstAttribute="height" constant="33" id="R5w-qG-f7Z"/>
                     </constraints>
                     <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -53,7 +53,7 @@
                 <constraint firstItem="KIf-Hv-ou8" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="OXB-FM-fHs"/>
                 <constraint firstItem="KIf-Hv-ou8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SwC-WR-jEO"/>
                 <constraint firstItem="ZZO-Wv-jph" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="Yko-qa-Q5R"/>
-                <constraint firstItem="bsA-rO-7cO" firstAttribute="top" secondItem="ZZO-Wv-jph" secondAttribute="bottom" constant="3" id="b6x-53-QwH"/>
+                <constraint firstItem="bsA-rO-7cO" firstAttribute="top" secondItem="ZZO-Wv-jph" secondAttribute="bottom" constant="8" id="b6x-53-QwH"/>
                 <constraint firstItem="ZZO-Wv-jph" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="dhF-AY-7EY"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bsA-rO-7cO" secondAttribute="trailing" id="jai-Av-2qN"/>
                 <constraint firstItem="KIf-Hv-ou8" firstAttribute="top" secondItem="bsA-rO-7cO" secondAttribute="bottom" id="vpW-7D-d6o"/>

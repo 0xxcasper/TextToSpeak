@@ -27,6 +27,11 @@ class TextViewController: BaseViewController {
         setUpTableView()
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        txView.addShadow()
+    }
+    
     // MARK: - Handle Keyboard
 
     override func keyboardWillShow(_ notification: NSNotification) {
@@ -59,6 +64,7 @@ private extension TextViewController
     func setUpTableView() {
         tbView.registerXibFile(TextTableViewCell.self)
         tbView.rowHeight = 50
+        tbView.separatorStyle = .none
         tbView.dataSource = self
         tbView.delegate = self
     }
@@ -76,8 +82,8 @@ private extension TextViewController
                 options: [.usesLineFragmentOrigin, .usesFontLeading],
                 attributes: [NSAttributedString.Key.font:font],
                 context: nil).size
-        if size.height < 200 {
-            self.heightAnchorTxView.constant = size.height + 8
+        if size.height < 200 && size.height > 33 {
+            self.heightAnchorTxView.constant = size.height + 10
             self.view.layoutIfNeeded()
         }
     }
@@ -86,7 +92,7 @@ private extension TextViewController
         self.txView.isEditable = true
         self.txView.text = ""
         self.textViewDidEndEditing(self.txView)
-        self.heightAnchorTxView.constant = 28
+        self.heightAnchorTxView.constant = 33
         self.view.layoutIfNeeded()
     }
     

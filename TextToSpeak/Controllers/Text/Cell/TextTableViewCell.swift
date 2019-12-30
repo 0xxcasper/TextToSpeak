@@ -14,7 +14,7 @@ protocol TextTableViewCellDelegate: class {
 }
 
 class TextTableViewCell: UITableViewCell {
-    
+    @IBOutlet weak var viewBg: UIView!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var btnStar: UIButton!
     
@@ -27,7 +27,11 @@ class TextTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        viewBg.addShadow()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
