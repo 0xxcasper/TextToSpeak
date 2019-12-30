@@ -23,13 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         let starVC = StarViewController()
-        starVC.tabBarItem = UITabBarItem(title: "Star", image: nil, tag: 0)
+        starVC.tabBarItem = UITabBarItem(title: "Star", image: #imageLiteral(resourceName: "star.fill"), tag: 0)
         
         let textVC = TextViewController()
-        textVC.tabBarItem = UITabBarItem(title: "Text", image: nil, tag: 1)
+        textVC.tabBarItem = UITabBarItem(title: "Text", image: #imageLiteral(resourceName: "text"), tag: 1)
         
         let settingVC = SettingViewController()
-        settingVC.tabBarItem = UITabBarItem(title: "Setting", image: nil, tag: 2)
+        settingVC.tabBarItem = UITabBarItem(title: "Setting", image: #imageLiteral(resourceName: "setting"), tag: 2)
         
         let tabbar = UITabBarController()
         tabbar.viewControllers = [starVC, textVC, settingVC]

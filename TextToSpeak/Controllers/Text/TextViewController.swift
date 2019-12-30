@@ -11,11 +11,12 @@ import AVFoundation
 
 class TextViewController: BaseViewController {
     // MARK: - View Elements
-    @IBOutlet weak var txf: UITextField!
+    @IBOutlet weak var txView: UITextView!
     @IBOutlet weak var tbView: UITableView!
     @IBOutlet weak var controlBar: ControlBar!
     @IBOutlet weak var bottomAnchorControllBar: NSLayoutConstraint!
-        
+    @IBOutlet weak var heightAnchorTxView: NSLayoutConstraint!
+    
     // MARK: - Properties
     private var synthesizer = AVSpeechSynthesizer()
     private var data = [HistoryModel]()
@@ -24,25 +25,6 @@ class TextViewController: BaseViewController {
         super.viewDidLoad()
         setUpViews()
         setUpTableView()
-    }
-    
-    private func setUpViews() {
-        txf.addTarget(self, action: #selector(TextViewController.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
-        txf.delegate = self
-        controlBar.delegate = self
-        synthesizer.delegate = self
-    }
-    
-    private func setUpTableView() {
-        tbView.registerXibFile(TextTableViewCell.self)
-        tbView.rowHeight = 50
-        tbView.dataSource = self
-        tbView.delegate = self
-    }
-    
-    private func textToSpeech(_ text: String) {
-        let utterance = text.configAVSpeechUtterance()
-        synthesizer.speak(utterance)
     }
     
     // MARK: - Handle Keyboard
@@ -59,6 +41,60 @@ class TextViewController: BaseViewController {
     override func keyboardWillHide(_ notification: NSNotification) {
         bottomAnchorControllBar.constant = 0
         view.layoutIfNeeded()
+    }
+}
+
+// MARK: - Private 's Method
+
+private extension TextViewController
+{
+    func setUpViews() {
+        txView.textColor = .lightGray
+        txView.text = "Tap here to type!"
+        txView.delegate = self
+        controlBar.delegate = self
+        synthesizer.delegate = self
+    }
+    
+    func setUpTableView() {
+        tbView.registerXibFile(TextTableViewCell.self)
+        tbView.rowHeight = 50
+        tbView.dataSource = self
+        tbView.delegate = self
+    }
+    
+    func textToSpeech(_ text: String) {
+        let utterance = text.configAVSpeechUtterance()
+        synthesizer.speak(utterance)
+    }
+    
+    func updateLayoutTextView(_ text: String) {
+        let font = UIFont.systemFont(ofSize: 15)
+        let maxSize = CGSize(width: txView.bounds.width, height: CGFloat.greatestFiniteMagnitude)
+
+        let size = (text as NSString).boundingRect(with: maxSize,
+                options: [.usesLineFragmentOrigin, .usesFontLeading],
+                attributes: [NSAttributedString.Key.font:font],
+                context: nil).size
+        if size.height < 200 {
+            self.heightAnchorTxView.constant = size.height + 8
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func resetTextView() {
+        self.txView.isEditable = true
+        self.txView.text = ""
+        self.textViewDidEndEditing(self.txView)
+        self.heightAnchorTxView.constant = 28
+        self.view.layoutIfNeeded()
+    }
+    
+    func resetControlBar() {
+        self.controlBar.isPlay = true
+        self.controlBar.isEnable = false
+        self.controlBar.isStop = false
+        self.tbView.isHidden = false
     }
 }
 
@@ -83,31 +119,45 @@ extension TextViewController: UITableViewDataSource, UITableViewDelegate, TextTa
     }
     
     func didTapCell(_ index: Int) {
-        self.txf.text = data[index].text
+        self.updateLayoutTextView(data[index].text)
+        self.txView.text = data[index].text
+        self.txView.textColor = .black
         self.textToSpeech(data[index].text)
     }
     
     func didTapStarCell(_ index: Int) {
-        data[index].isStar.toggle()
-        tbView.reloadData()
+        self.data[index].isStar.toggle()
+        self.tbView.reloadData()
     }
 }
 
 // MARK: - UITextFieldDelegate's Method
 
-extension TextViewController: UITextFieldDelegate
+extension TextViewController: UITextViewDelegate
 {
-    @objc func textFieldDidChange(_ textField: UITextField) {
-        if let text = textField.text, !text.isEmpty {
-            self.controlBar.isEnable = true
-        } else {
-            self.controlBar.isEnable = false
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if txView.textColor == .lightGray && txView.isFirstResponder {
+            txView.text = nil
+            txView.textColor = .black
+            tbView.isHidden = true
         }
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        dismissKeyBoard()
-        return true
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if txView.text.isEmpty || txView.text == "" {
+            tbView.isHidden = false
+            txView.textColor = .lightGray
+            txView.text = "Tap here to type!"
+        }
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        if let text = textView.text, !text.isEmpty {
+            self.controlBar.isEnable = true
+            self.updateLayoutTextView(text)
+        } else {
+            self.controlBar.isEnable = false
+        }
     }
 }
 
@@ -116,7 +166,7 @@ extension TextViewController: UITextFieldDelegate
 extension TextViewController: ControlBarDelegate
 {
     func didTapPlayControlBar() {
-        guard let text = self.txf.text else { return }
+        guard let text = self.txView.text else { return }
         if !text.isEmpty && !synthesizer.isPaused {
             self.textToSpeech(text)
             if !data.contains(where: {$0.text == text}) {
@@ -135,12 +185,12 @@ extension TextViewController: ControlBarDelegate
     }
     
     func didTapStopControlBar() {
-        self.txf.text = ""
+        self.txView.text = ""
         synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
     }
     
     func didTapClearControlBar() {
-        self.txf.text = ""
+        self.txView.text = ""
     }
     
     func didTapMoreControlBar() {
@@ -153,23 +203,20 @@ extension TextViewController: ControlBarDelegate
 extension TextViewController: AVSpeechSynthesizerDelegate
 {
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didStart utterance: AVSpeechUtterance) {
+        self.txView.isEditable = false
         self.tbView.isHidden = true
         self.controlBar.isPlay = false
         self.controlBar.isEnable = true
     }
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-        self.controlBar.isPlay = true
-        self.controlBar.isEnable = false
-        self.controlBar.isStop = false
-        self.tbView.isHidden = false
-        self.txf.text = ""
+        self.resetControlBar()
+        self.resetTextView()
     }
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
-        self.controlBar.isPlay = true
-        self.controlBar.isEnable = false
-        self.tbView.isHidden = false
+        self.resetControlBar()
+        self.resetTextView()
     }
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didPause utterance: AVSpeechUtterance) {
