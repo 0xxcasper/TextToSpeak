@@ -46,6 +46,8 @@ class TextViewController: BaseViewController {
     override func keyboardWillHide(_ notification: NSNotification) {
         bottomAnchorControllBar.constant = 0
         view.layoutIfNeeded()
+        self.resetControlBar()
+        self.resetTextView()
     }
 }
 
@@ -128,7 +130,11 @@ extension TextViewController: UITableViewDataSource, UITableViewDelegate, TextTa
         self.updateLayoutTextView(data[index].text)
         self.txView.text = data[index].text
         self.txView.textColor = .black
-        self.textToSpeech(data[index].text)
+        self.tbView.isHidden = true
+        self.controlBar.isPlay = true
+        self.controlBar.isEnable = true
+        self.controlBar.isStop = false
+        //self.textToSpeech(data[index].text)
     }
     
     func didTapStarCell(_ index: Int) {
@@ -154,6 +160,7 @@ extension TextViewController: UITextViewDelegate
             tbView.isHidden = false
             txView.textColor = .lightGray
             txView.text = "Tap here to type!"
+            txView.endEditing(true)
         }
     }
     
@@ -196,11 +203,45 @@ extension TextViewController: ControlBarDelegate
     }
     
     func didTapClearControlBar() {
-        self.txView.text = ""
+        self.resetControlBar()
+        self.resetTextView()
     }
     
     func didTapMoreControlBar() {
         
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+
+        alert.addAction(UIAlertAction(title: "Export Audio", style: .default , handler:{ (UIAlertAction)in
+            if #available(iOS 13.0, *) {
+                if let text = self.txView.text {
+                    self.synthesizer.write(text.configAVSpeechUtterance()) { (buffer) in
+                        guard let pcmBuffer = buffer as? AVAudioPCMBuffer else {
+                            fatalError("unknown buffer type: \(buffer)")
+                        }
+                        if pcmBuffer.frameLength == 0 {
+                            // done
+                        } else {
+                            do {
+                                let output = try AVAudioFile(forWriting: URL(fileURLWithPath: "test.wav"),settings: pcmBuffer.format.settings, commonFormat: .pcmFormatInt16, interleaved: false)
+                                try output.write(from: pcmBuffer)
+                            } catch {
+                                
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }))
+
+        alert.addAction(UIAlertAction(title: "Add to Starred", style: .default , handler:{ (UIAlertAction)in
+            
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Copy to Clipboard", style: .default , handler:{ (UIAlertAction)in
+            
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
