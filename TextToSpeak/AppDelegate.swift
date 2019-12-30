@@ -15,7 +15,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        if #available(iOS 13.0, *) {
+            window?.overrideUserInterfaceStyle = .light
+        }
+        
+        let starVC = StarViewController()
+        starVC.tabBarItem = UITabBarItem(title: "Star", image: nil, tag: 0)
+        
+        let textVC = TextViewController()
+        textVC.tabBarItem = UITabBarItem(title: "Text", image: nil, tag: 1)
+        
+        let settingVC = SettingViewController()
+        settingVC.tabBarItem = UITabBarItem(title: "Setting", image: nil, tag: 2)
+        
+        let tabbar = UITabBarController()
+        tabbar.viewControllers = [starVC, textVC, settingVC]
+        
+        window?.rootViewController = tabbar
+        
         return true
     }
 
