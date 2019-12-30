@@ -83,6 +83,7 @@ extension TextViewController: UITableViewDataSource, UITableViewDelegate, TextTa
     }
     
     func didTapCell(_ index: Int) {
+        self.txf.text = data[index].text
         self.textToSpeech(data[index].text)
     }
     
@@ -127,11 +128,15 @@ extension TextViewController: ControlBarDelegate
         } else {
             synthesizer.continueSpeaking()
         }
-        self.txf.text = ""
     }
     
     func didTapPauseControlBar() {
         synthesizer.pauseSpeaking(at: AVSpeechBoundary.immediate)
+    }
+    
+    func didTapStopControlBar() {
+        self.txf.text = ""
+        synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
     }
     
     func didTapClearControlBar() {
@@ -143,11 +148,12 @@ extension TextViewController: ControlBarDelegate
     }
 }
 
-// MARK: - ControlBarDelegate's Method
+// MARK: - AVSpeechSynthesizerDelegate's Method
 
 extension TextViewController: AVSpeechSynthesizerDelegate
 {
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didStart utterance: AVSpeechUtterance) {
+        self.tbView.isHidden = true
         self.controlBar.isPlay = false
         self.controlBar.isEnable = true
     }
@@ -155,6 +161,15 @@ extension TextViewController: AVSpeechSynthesizerDelegate
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
         self.controlBar.isPlay = true
         self.controlBar.isEnable = false
+        self.controlBar.isStop = false
+        self.tbView.isHidden = false
+        self.txf.text = ""
+    }
+    
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
+        self.controlBar.isPlay = true
+        self.controlBar.isEnable = false
+        self.tbView.isHidden = false
     }
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didPause utterance: AVSpeechUtterance) {

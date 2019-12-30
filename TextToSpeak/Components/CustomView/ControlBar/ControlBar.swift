@@ -13,6 +13,7 @@ protocol ControlBarDelegate: class {
     func didTapPlayControlBar()
     func didTapPauseControlBar()
     func didTapClearControlBar()
+    func didTapStopControlBar()
     func didTapMoreControlBar()
 }
 
@@ -50,6 +51,13 @@ class ControlBar: BaseViewXib {
     var isPlay: Bool = true {
         didSet {
             btnPlay.setImage( UIImage(named: isPlay ? "play" : "pause"), for: UIControl.State.normal)
+            self.isStop = true
+        }
+    }
+    
+    var isStop: Bool = false {
+        didSet {
+            btnClear.setTitle( isStop ? "Stop": "Clear", for: UIControl.State.normal)
         }
     }
     
@@ -71,6 +79,10 @@ class ControlBar: BaseViewXib {
     }
     
     @IBAction func didTapClear(_ sender: UIButton) {
-        delegate.didTapClearControlBar()
+        if isStop {
+            delegate.didTapStopControlBar()
+        } else {
+            delegate.didTapClearControlBar()
+        }
     }
 }
