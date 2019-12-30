@@ -25,6 +25,14 @@
 		84D6C04123B9A64E00A53FBB /* TextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D6C03F23B9A64E00A53FBB /* TextTableViewCell.xib */; };
 		84D6C04323B9A66700A53FBB /* UITableView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6C04223B9A66700A53FBB /* UITableView+Extention.swift */; };
 		84D6C04623B9ABAD00A53FBB /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6C04523B9ABAD00A53FBB /* HistoryModel.swift */; };
+		84D6C04A23B9DD0400A53FBB /* SelectVoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6C04823B9DD0400A53FBB /* SelectVoiceViewController.swift */; };
+		84D6C04B23B9DD0400A53FBB /* SelectVoiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D6C04923B9DD0400A53FBB /* SelectVoiceViewController.xib */; };
+		84D6C05523B9E51D00A53FBB /* NormalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6C05323B9E51D00A53FBB /* NormalTableViewCell.swift */; };
+		84D6C05623B9E51D00A53FBB /* NormalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D6C05423B9E51D00A53FBB /* NormalTableViewCell.xib */; };
+		84D6C05923B9E5B300A53FBB /* ControlTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6C05723B9E5B300A53FBB /* ControlTableViewCell.swift */; };
+		84D6C05A23B9E5B300A53FBB /* ControlTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D6C05823B9E5B300A53FBB /* ControlTableViewCell.xib */; };
+		84D6C05E23B9ECEA00A53FBB /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6C05D23B9ECEA00A53FBB /* HeaderCell.swift */; };
+		84D6C06023B9ECF400A53FBB /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D6C05F23B9ECF400A53FBB /* HeaderCell.xib */; };
 		DBBA702D23B78F2700BEC38D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA702C23B78F2700BEC38D /* AppDelegate.swift */; };
 		DBBA703423B78F2800BEC38D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBBA703323B78F2800BEC38D /* Assets.xcassets */; };
 		DBBA703723B78F2800BEC38D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBBA703523B78F2800BEC38D /* LaunchScreen.storyboard */; };
@@ -68,6 +76,14 @@
 		84D6C03F23B9A64E00A53FBB /* TextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextTableViewCell.xib; sourceTree = "<group>"; };
 		84D6C04223B9A66700A53FBB /* UITableView+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extention.swift"; sourceTree = "<group>"; };
 		84D6C04523B9ABAD00A53FBB /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
+		84D6C04823B9DD0400A53FBB /* SelectVoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVoiceViewController.swift; sourceTree = "<group>"; };
+		84D6C04923B9DD0400A53FBB /* SelectVoiceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectVoiceViewController.xib; sourceTree = "<group>"; };
+		84D6C05323B9E51D00A53FBB /* NormalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalTableViewCell.swift; sourceTree = "<group>"; };
+		84D6C05423B9E51D00A53FBB /* NormalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NormalTableViewCell.xib; sourceTree = "<group>"; };
+		84D6C05723B9E5B300A53FBB /* ControlTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlTableViewCell.swift; sourceTree = "<group>"; };
+		84D6C05823B9E5B300A53FBB /* ControlTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ControlTableViewCell.xib; sourceTree = "<group>"; };
+		84D6C05D23B9ECEA00A53FBB /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		84D6C05F23B9ECF400A53FBB /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
 		DBBA702923B78F2700BEC38D /* TextToSpeak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextToSpeak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBBA702C23B78F2700BEC38D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBBA703323B78F2800BEC38D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -129,6 +145,8 @@
 		84D6C01623B993BA00A53FBB /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				84D6C04C23B9E42900A53FBB /* Cell */,
+				84D6C04723B9DCE100A53FBB /* SelectVoice */,
 				84D6C01C23B993FB00A53FBB /* SettingViewController.swift */,
 				84D6C01D23B993FB00A53FBB /* SettingViewController.xib */,
 			);
@@ -222,6 +240,52 @@
 				84D6C04523B9ABAD00A53FBB /* HistoryModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		84D6C04723B9DCE100A53FBB /* SelectVoice */ = {
+			isa = PBXGroup;
+			children = (
+				84D6C04823B9DD0400A53FBB /* SelectVoiceViewController.swift */,
+				84D6C04923B9DD0400A53FBB /* SelectVoiceViewController.xib */,
+			);
+			path = SelectVoice;
+			sourceTree = "<group>";
+		};
+		84D6C04C23B9E42900A53FBB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				84D6C05C23B9ECDC00A53FBB /* HeaderCell */,
+				84D6C04E23B9E43900A53FBB /* ControlCell */,
+				84D6C04D23B9E43200A53FBB /* NormalCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		84D6C04D23B9E43200A53FBB /* NormalCell */ = {
+			isa = PBXGroup;
+			children = (
+				84D6C05323B9E51D00A53FBB /* NormalTableViewCell.swift */,
+				84D6C05423B9E51D00A53FBB /* NormalTableViewCell.xib */,
+			);
+			path = NormalCell;
+			sourceTree = "<group>";
+		};
+		84D6C04E23B9E43900A53FBB /* ControlCell */ = {
+			isa = PBXGroup;
+			children = (
+				84D6C05723B9E5B300A53FBB /* ControlTableViewCell.swift */,
+				84D6C05823B9E5B300A53FBB /* ControlTableViewCell.xib */,
+			);
+			path = ControlCell;
+			sourceTree = "<group>";
+		};
+		84D6C05C23B9ECDC00A53FBB /* HeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+				84D6C05D23B9ECEA00A53FBB /* HeaderCell.swift */,
+				84D6C05F23B9ECF400A53FBB /* HeaderCell.xib */,
+			);
+			path = HeaderCell;
 			sourceTree = "<group>";
 		};
 		DBBA702023B78F2700BEC38D = {
@@ -384,10 +448,14 @@
 				DBBA703723B78F2800BEC38D /* LaunchScreen.storyboard in Resources */,
 				84D6C03023B9964700A53FBB /* ControlBar.xib in Resources */,
 				84D6C04123B9A64E00A53FBB /* TextTableViewCell.xib in Resources */,
+				84D6C04B23B9DD0400A53FBB /* SelectVoiceViewController.xib in Resources */,
 				84D6C01F23B993FB00A53FBB /* SettingViewController.xib in Resources */,
+				84D6C05623B9E51D00A53FBB /* NormalTableViewCell.xib in Resources */,
 				84D6C02323B9940800A53FBB /* StarViewController.xib in Resources */,
 				DBBA703423B78F2800BEC38D /* Assets.xcassets in Resources */,
 				84D6C01B23B993ED00A53FBB /* TextViewController.xib in Resources */,
+				84D6C05A23B9E5B300A53FBB /* ControlTableViewCell.xib in Resources */,
+				84D6C06023B9ECF400A53FBB /* HeaderCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,11 +480,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84D6C05523B9E51D00A53FBB /* NormalTableViewCell.swift in Sources */,
 				84D6C03523B99B0A00A53FBB /* AppConstant.swift in Sources */,
 				84D6C03C23B9A1DF00A53FBB /* String+Extention.swift in Sources */,
 				84D6C04323B9A66700A53FBB /* UITableView+Extention.swift in Sources */,
+				84D6C05E23B9ECEA00A53FBB /* HeaderCell.swift in Sources */,
 				84D6C02723B995AC00A53FBB /* BaseViewXib.swift in Sources */,
 				DBBA702D23B78F2700BEC38D /* AppDelegate.swift in Sources */,
+				84D6C04A23B9DD0400A53FBB /* SelectVoiceViewController.swift in Sources */,
 				84D6C01A23B993ED00A53FBB /* TextViewController.swift in Sources */,
 				84D6C01E23B993FB00A53FBB /* SettingViewController.swift in Sources */,
 				84D6C04023B9A64E00A53FBB /* TextTableViewCell.swift in Sources */,
@@ -424,6 +495,7 @@
 				84D6C03823B99FED00A53FBB /* UserDefaultHelper.swift in Sources */,
 				84D6C03223B998B200A53FBB /* BaseViewController.swift in Sources */,
 				84D6C02223B9940800A53FBB /* StarViewController.swift in Sources */,
+				84D6C05923B9E5B300A53FBB /* ControlTableViewCell.swift in Sources */,
 				84D6C04623B9ABAD00A53FBB /* HistoryModel.swift in Sources */,
 				84D6C02A23B995EA00A53FBB /* UIView+Extention.swift in Sources */,
 			);

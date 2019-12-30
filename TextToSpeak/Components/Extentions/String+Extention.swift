@@ -16,12 +16,12 @@ extension String
         if let languageCode = UserDefaultHelper.shared.languageCode {
             utterance.voice = AVSpeechSynthesisVoice(language: languageCode)
         } else {
-            utterance.voice = AVSpeechSynthesisVoice(language: Locale.current.languageCode)
+            utterance.voice = AVSpeechSynthesisVoice(language: AVSpeechSynthesisVoice.currentLanguageCode())
         }
-        if let rate =  UserDefaultHelper.shared.rate {
+        if let rate = UserDefaultHelper.shared.rate {
             utterance.rate = rate
         }
-        if let pitch =  UserDefaultHelper.shared.pitchMultiplier {
+        if let pitch = UserDefaultHelper.shared.pitch {
             utterance.pitchMultiplier = pitch
         }
         return utterance

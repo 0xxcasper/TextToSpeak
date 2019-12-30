@@ -11,7 +11,7 @@ import Foundation
 private enum UserDefaultHelperKey: String {
     case languageCode = "Code"
     case rate = "Rate"
-    case pitchMultiplier = "PitchMultiplier"
+    case pitch = "Pitch"
 }
 
 class UserDefaultHelper {
@@ -25,7 +25,7 @@ class UserDefaultHelper {
             return value
         }
         set(languageCode) {
-            save(value: rate, key: .languageCode)
+            save(value: languageCode, key: .languageCode)
         }
     }
     
@@ -39,13 +39,13 @@ class UserDefaultHelper {
         }
     }
     
-    var pitchMultiplier: Float? {
+    var pitch: Float? {
         get {
-            let value = get(key: .pitchMultiplier) as? Float
+            let value = get(key: .pitch) as? Float
             return value
         }
-        set(pitchMultiplier) {
-            save(value: rate, key: .pitchMultiplier)
+        set(pitch) {
+            save(value: pitch, key: .pitch)
         }
     }
 }
