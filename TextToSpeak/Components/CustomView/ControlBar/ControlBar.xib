@@ -25,7 +25,7 @@
                         <constraint firstAttribute="height" constant="30" id="JU2-VB-cw5"/>
                         <constraint firstAttribute="width" constant="30" id="Ln0-cL-sXF"/>
                     </constraints>
-                    <state key="normal" image="play.fill" catalog="system"/>
+                    <state key="normal" image="play"/>
                     <connections>
                         <action selector="didTapPlay:" destination="-1" eventType="touchUpInside" id="oe6-4h-l4L"/>
                     </connections>
@@ -69,6 +69,6 @@
         </view>
     </objects>
     <resources>
-        <image name="play.fill" catalog="system" width="58" height="64"/>
+        <image name="play" width="30" height="30"/>
     </resources>
 </document>

@@ -11,6 +11,7 @@ import UIKit
 
 protocol ControlBarDelegate: class {
     func didTapPlayControlBar()
+    func didTapPauseControlBar()
     func didTapClearControlBar()
     func didTapMoreControlBar()
 }
@@ -22,9 +23,47 @@ class ControlBar: BaseViewXib {
     @IBOutlet weak var btnMore: UIButton!
     
     weak var delegate: ControlBarDelegate!
+    var isEnable: Bool = false {
+        didSet {
+            if isEnable == true {
+                btnPlay.isEnabled = true
+                btnPlay.setTitleColor(UIColor.black, for: .normal)
+                
+                btnClear.isEnabled = true
+                btnClear.setTitleColor(UIColor.black, for: .normal)
+                
+                btnMore.isEnabled = true
+                btnMore.setTitleColor(UIColor.black, for: .normal)
+            } else {
+                btnPlay.isEnabled = false
+                btnPlay.setTitleColor(UIColor.gray, for: .normal)
+                
+                btnClear.isEnabled = false
+                btnClear.setTitleColor(UIColor.gray, for: .normal)
+                
+                btnMore.isEnabled = false
+                btnMore.setTitleColor(UIColor.gray, for: .normal)
+            }
+        }
+    }
+    
+    var isPlay: Bool = true {
+        didSet {
+            btnPlay.setImage( UIImage(named: isPlay ? "play" : "pause"), for: UIControl.State.normal)
+        }
+    }
+    
+    override func setUpViews() {
+        super.setUpViews()
+        self.isEnable = false
+    }
     
     @IBAction func didTapPlay(_ sender: UIButton) {
-        delegate.didTapPlayControlBar()
+        if isPlay {
+            delegate.didTapPlayControlBar()
+        } else {
+            delegate.didTapPauseControlBar()
+        }
     }
     
     @IBAction func didTapMore(_ sender: UIButton) {

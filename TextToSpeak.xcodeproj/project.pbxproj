@@ -21,6 +21,10 @@
 		84D6C03523B99B0A00A53FBB /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6C03423B99B0A00A53FBB /* AppConstant.swift */; };
 		84D6C03823B99FED00A53FBB /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6C03723B99FED00A53FBB /* UserDefaultHelper.swift */; };
 		84D6C03C23B9A1DF00A53FBB /* String+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6C03B23B9A1DF00A53FBB /* String+Extention.swift */; };
+		84D6C04023B9A64E00A53FBB /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6C03E23B9A64E00A53FBB /* TextTableViewCell.swift */; };
+		84D6C04123B9A64E00A53FBB /* TextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D6C03F23B9A64E00A53FBB /* TextTableViewCell.xib */; };
+		84D6C04323B9A66700A53FBB /* UITableView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6C04223B9A66700A53FBB /* UITableView+Extention.swift */; };
+		84D6C04623B9ABAD00A53FBB /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6C04523B9ABAD00A53FBB /* HistoryModel.swift */; };
 		DBBA702D23B78F2700BEC38D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA702C23B78F2700BEC38D /* AppDelegate.swift */; };
 		DBBA703423B78F2800BEC38D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBBA703323B78F2800BEC38D /* Assets.xcassets */; };
 		DBBA703723B78F2800BEC38D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBBA703523B78F2800BEC38D /* LaunchScreen.storyboard */; };
@@ -60,6 +64,10 @@
 		84D6C03423B99B0A00A53FBB /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 		84D6C03723B99FED00A53FBB /* UserDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
 		84D6C03B23B9A1DF00A53FBB /* String+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extention.swift"; sourceTree = "<group>"; };
+		84D6C03E23B9A64E00A53FBB /* TextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTableViewCell.swift; sourceTree = "<group>"; };
+		84D6C03F23B9A64E00A53FBB /* TextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextTableViewCell.xib; sourceTree = "<group>"; };
+		84D6C04223B9A66700A53FBB /* UITableView+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extention.swift"; sourceTree = "<group>"; };
+		84D6C04523B9ABAD00A53FBB /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
 		DBBA702923B78F2700BEC38D /* TextToSpeak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextToSpeak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBBA702C23B78F2700BEC38D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBBA703323B78F2800BEC38D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -111,6 +119,7 @@
 		84D6C01423B993A700A53FBB /* Text */ = {
 			isa = PBXGroup;
 			children = (
+				84D6C03D23B9A62900A53FBB /* Cell */,
 				84D6C01823B993ED00A53FBB /* TextViewController.swift */,
 				84D6C01923B993ED00A53FBB /* TextViewController.xib */,
 			);
@@ -160,6 +169,7 @@
 			children = (
 				84D6C02923B995EA00A53FBB /* UIView+Extention.swift */,
 				84D6C03B23B9A1DF00A53FBB /* String+Extention.swift */,
+				84D6C04223B9A66700A53FBB /* UITableView+Extention.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -197,6 +207,23 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		84D6C03D23B9A62900A53FBB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				84D6C03E23B9A64E00A53FBB /* TextTableViewCell.swift */,
+				84D6C03F23B9A64E00A53FBB /* TextTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		84D6C04423B9ABA000A53FBB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84D6C04523B9ABAD00A53FBB /* HistoryModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		DBBA702023B78F2700BEC38D = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				DBBA702C23B78F2700BEC38D /* AppDelegate.swift */,
+				84D6C04423B9ABA000A53FBB /* Model */,
 				84D6C03323B99AFB00A53FBB /* Constant */,
 				84D6C02423B9958000A53FBB /* Components */,
 				84D6C01323B9939B00A53FBB /* Controllers */,
@@ -355,6 +383,7 @@
 			files = (
 				DBBA703723B78F2800BEC38D /* LaunchScreen.storyboard in Resources */,
 				84D6C03023B9964700A53FBB /* ControlBar.xib in Resources */,
+				84D6C04123B9A64E00A53FBB /* TextTableViewCell.xib in Resources */,
 				84D6C01F23B993FB00A53FBB /* SettingViewController.xib in Resources */,
 				84D6C02323B9940800A53FBB /* StarViewController.xib in Resources */,
 				DBBA703423B78F2800BEC38D /* Assets.xcassets in Resources */,
@@ -385,14 +414,17 @@
 			files = (
 				84D6C03523B99B0A00A53FBB /* AppConstant.swift in Sources */,
 				84D6C03C23B9A1DF00A53FBB /* String+Extention.swift in Sources */,
+				84D6C04323B9A66700A53FBB /* UITableView+Extention.swift in Sources */,
 				84D6C02723B995AC00A53FBB /* BaseViewXib.swift in Sources */,
 				DBBA702D23B78F2700BEC38D /* AppDelegate.swift in Sources */,
 				84D6C01A23B993ED00A53FBB /* TextViewController.swift in Sources */,
 				84D6C01E23B993FB00A53FBB /* SettingViewController.swift in Sources */,
+				84D6C04023B9A64E00A53FBB /* TextTableViewCell.swift in Sources */,
 				84D6C02E23B9963300A53FBB /* ControlBar.swift in Sources */,
 				84D6C03823B99FED00A53FBB /* UserDefaultHelper.swift in Sources */,
 				84D6C03223B998B200A53FBB /* BaseViewController.swift in Sources */,
 				84D6C02223B9940800A53FBB /* StarViewController.swift in Sources */,
+				84D6C04623B9ABAD00A53FBB /* HistoryModel.swift in Sources */,
 				84D6C02A23B995EA00A53FBB /* UIView+Extention.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
