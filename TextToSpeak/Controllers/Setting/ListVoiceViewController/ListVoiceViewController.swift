@@ -23,6 +23,7 @@ class ListVoiceViewController: BaseViewController {
             self.dataShow = response
             self.tbView.delegate = self
             self.tbView.dataSource = self
+            self.tbView.registerXibFile(ListVoiceCell.self)
         }
     }
     
@@ -45,9 +46,12 @@ extension ListVoiceViewController: UITableViewDelegate, UITableViewDataSource {
         return dataShow[section].listVoices.count
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return dataShow[section].title
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel!.text = "Sangggg"
+        let cell = tableView.dequeue(ListVoiceCell.self, for: indexPath)
+        cell.setupCell(index: indexPath, item: dataShow[indexPath.section].listVoices[indexPath.row])
         return cell
     }
 }

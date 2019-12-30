@@ -14,6 +14,10 @@ protocol ListVoiceCellDelegate: class {
 
 class ListVoiceCell: UITableViewCell {
 
+    
+    @IBOutlet weak var imvPlaySound: UIImageView!
+    @IBOutlet weak var lbl_Title: UILabel!
+    
     weak var delegate: ListVoiceCellDelegate?
     private var index: IndexPath?
     private var item: VoiceModel?
@@ -29,6 +33,7 @@ class ListVoiceCell: UITableViewCell {
     func setupCell(index: IndexPath, item: VoiceModel) {
         self.index = index
         self.item = item
+        lbl_Title.text = item.name
     }
     
     private func setupView() {

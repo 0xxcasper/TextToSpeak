@@ -20,15 +20,25 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="huj-F8-zGe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOa-lE-gKn">
-                                <rect key="frame" x="139" y="43" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOa-lE-gKn">
+                                <rect key="frame" x="56" y="56" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="owC-y8-olb">
+                                <rect key="frame" x="16" y="46" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="It0-yg-GCm"/>
+                                    <constraint firstAttribute="width" constant="20" id="pXo-x8-3Kj"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="owC-y8-olb" firstAttribute="leading" secondItem="huj-F8-zGe" secondAttribute="leading" constant="16" id="3J9-xh-Oqh"/>
+                            <constraint firstItem="lOa-lE-gKn" firstAttribute="leading" secondItem="owC-y8-olb" secondAttribute="trailing" constant="20" id="QTi-xq-cKE"/>
+                            <constraint firstItem="owC-y8-olb" firstAttribute="centerY" secondItem="huj-F8-zGe" secondAttribute="centerY" id="eFE-C7-Jv9"/>
                             <constraint firstItem="lOa-lE-gKn" firstAttribute="centerY" secondItem="huj-F8-zGe" secondAttribute="centerY" id="mDo-P8-eXt"/>
                         </constraints>
                     </view>
@@ -41,6 +51,10 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imvPlaySound" destination="owC-y8-olb" id="E71-70-fCY"/>
+                <outlet property="lbl_Title" destination="lOa-lE-gKn" id="VX8-88-Yvw"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="113.16964285714285"/>
         </tableViewCell>
     </objects>
