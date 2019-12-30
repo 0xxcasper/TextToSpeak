@@ -7,6 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		256DC9E523BA340A00F77B96 /* ListVoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DC9E323BA340A00F77B96 /* ListVoiceViewController.swift */; };
+		256DC9E623BA340A00F77B96 /* ListVoiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 256DC9E423BA340A00F77B96 /* ListVoiceViewController.xib */; };
+		256DC9ED23BA35E400F77B96 /* VoiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DC9EB23BA35E400F77B96 /* VoiceModel.swift */; };
+		256DC9EE23BA35E400F77B96 /* SectionVoiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DC9EC23BA35E400F77B96 /* SectionVoiceModel.swift */; };
+		256DC9F023BA366600F77B96 /* ListLanguages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DC9EF23BA366500F77B96 /* ListLanguages.swift */; };
+		256DCA1823BA36B100F77B96 /* SLOVAKIA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DC9F223BA36B000F77B96 /* SLOVAKIA.swift */; };
+		256DCA1923BA36B100F77B96 /* TURKEY.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DC9F323BA36B000F77B96 /* TURKEY.swift */; };
+		256DCA1A23BA36B100F77B96 /* INDIAN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DC9F423BA36B000F77B96 /* INDIAN.swift */; };
+		256DCA1B23BA36B100F77B96 /* KOREAN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DC9F523BA36B000F77B96 /* KOREAN.swift */; };
+		256DCA1C23BA36B100F77B96 /* HUNGARY.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DC9F623BA36B000F77B96 /* HUNGARY.swift */; };
+		256DCA1D23BA36B100F77B96 /* ROMANIA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DC9F723BA36B000F77B96 /* ROMANIA.swift */; };
+		256DCA1E23BA36B100F77B96 /* UNITEDKINGDOM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DC9F823BA36B000F77B96 /* UNITEDKINGDOM.swift */; };
+		256DCA1F23BA36B100F77B96 /* UNITEDSTATES.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DC9F923BA36B000F77B96 /* UNITEDSTATES.swift */; };
+		256DCA2023BA36B100F77B96 /* CANADA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DC9FA23BA36B000F77B96 /* CANADA.swift */; };
+		256DCA2123BA36B100F77B96 /* BEGIUM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DC9FB23BA36B000F77B96 /* BEGIUM.swift */; };
+		256DCA2223BA36B100F77B96 /* DANISH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DC9FC23BA36B000F77B96 /* DANISH.swift */; };
+		256DCA2323BA36B100F77B96 /* IRISH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DC9FD23BA36B000F77B96 /* IRISH.swift */; };
+		256DCA2423BA36B100F77B96 /* FRANCE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DC9FE23BA36B000F77B96 /* FRANCE.swift */; };
+		256DCA2523BA36B100F77B96 /* PORTUGAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DC9FF23BA36B000F77B96 /* PORTUGAL.swift */; };
+		256DCA2623BA36B100F77B96 /* THAILAND.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DCA0023BA36B000F77B96 /* THAILAND.swift */; };
+		256DCA2723BA36B100F77B96 /* CZECK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DCA0123BA36B000F77B96 /* CZECK.swift */; };
+		256DCA2823BA36B100F77B96 /* HINDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DCA0223BA36B000F77B96 /* HINDI.swift */; };
+		256DCA2923BA36B100F77B96 /* INDONESIA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DCA0323BA36B000F77B96 /* INDONESIA.swift */; };
+		256DCA2A23BA36B100F77B96 /* ITALY.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DCA0423BA36B000F77B96 /* ITALY.swift */; };
+		256DCA2B23BA36B100F77B96 /* FINLAND.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DCA0523BA36B000F77B96 /* FINLAND.swift */; };
+		256DCA2C23BA36B100F77B96 /* HONGKONG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DCA0623BA36B000F77B96 /* HONGKONG.swift */; };
+		256DCA2D23BA36B100F77B96 /* NETHERLANDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DCA0723BA36B000F77B96 /* NETHERLANDS.swift */; };
+		256DCA2E23BA36B100F77B96 /* BRAZIL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DCA0823BA36B000F77B96 /* BRAZIL.swift */; };
+		256DCA2F23BA36B100F77B96 /* POLAND.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DCA0923BA36B000F77B96 /* POLAND.swift */; };
+		256DCA3023BA36B100F77B96 /* SAUDIARABIA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DCA0A23BA36B000F77B96 /* SAUDIARABIA.swift */; };
+		256DCA3123BA36B100F77B96 /* SOUTHAFICA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DCA0B23BA36B000F77B96 /* SOUTHAFICA.swift */; };
+		256DCA3223BA36B100F77B96 /* GREEK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DCA0C23BA36B000F77B96 /* GREEK.swift */; };
+		256DCA3323BA36B100F77B96 /* AUSTRALIAN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DCA0D23BA36B100F77B96 /* AUSTRALIAN.swift */; };
+		256DCA3423BA36B100F77B96 /* CHINA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DCA0E23BA36B100F77B96 /* CHINA.swift */; };
+		256DCA3523BA36B100F77B96 /* RUSSIAN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DCA0F23BA36B100F77B96 /* RUSSIAN.swift */; };
+		256DCA3623BA36B100F77B96 /* SPAIN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DCA1023BA36B100F77B96 /* SPAIN.swift */; };
+		256DCA3723BA36B100F77B96 /* GERMAN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DCA1123BA36B100F77B96 /* GERMAN.swift */; };
+		256DCA3823BA36B100F77B96 /* ISRAEL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DCA1223BA36B100F77B96 /* ISRAEL.swift */; };
+		256DCA3923BA36B100F77B96 /* SWEDEN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DCA1323BA36B100F77B96 /* SWEDEN.swift */; };
+		256DCA3A23BA36B100F77B96 /* TAIWAN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DCA1423BA36B100F77B96 /* TAIWAN.swift */; };
+		256DCA3B23BA36B100F77B96 /* JAPAN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DCA1523BA36B100F77B96 /* JAPAN.swift */; };
+		256DCA3C23BA36B100F77B96 /* MEXICO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DCA1623BA36B100F77B96 /* MEXICO.swift */; };
+		256DCA3D23BA36B100F77B96 /* NORWAY.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DCA1723BA36B100F77B96 /* NORWAY.swift */; };
+		256DCA4123BA3AE200F77B96 /* ListVoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DCA3F23BA3AE200F77B96 /* ListVoiceCell.swift */; };
+		256DCA4223BA3AE200F77B96 /* ListVoiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 256DCA4023BA3AE200F77B96 /* ListVoiceCell.xib */; };
 		84D6C01A23B993ED00A53FBB /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6C01823B993ED00A53FBB /* TextViewController.swift */; };
 		84D6C01B23B993ED00A53FBB /* TextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D6C01923B993ED00A53FBB /* TextViewController.xib */; };
 		84D6C01E23B993FB00A53FBB /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6C01C23B993FB00A53FBB /* SettingViewController.swift */; };
@@ -58,6 +103,51 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		256DC9E323BA340A00F77B96 /* ListVoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVoiceViewController.swift; sourceTree = "<group>"; };
+		256DC9E423BA340A00F77B96 /* ListVoiceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListVoiceViewController.xib; sourceTree = "<group>"; };
+		256DC9EB23BA35E400F77B96 /* VoiceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VoiceModel.swift; path = TextToSpeak/Model/VoiceModel.swift; sourceTree = SOURCE_ROOT; };
+		256DC9EC23BA35E400F77B96 /* SectionVoiceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SectionVoiceModel.swift; path = TextToSpeak/Model/SectionVoiceModel.swift; sourceTree = SOURCE_ROOT; };
+		256DC9EF23BA366500F77B96 /* ListLanguages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListLanguages.swift; sourceTree = "<group>"; };
+		256DC9F223BA36B000F77B96 /* SLOVAKIA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLOVAKIA.swift; sourceTree = "<group>"; };
+		256DC9F323BA36B000F77B96 /* TURKEY.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TURKEY.swift; sourceTree = "<group>"; };
+		256DC9F423BA36B000F77B96 /* INDIAN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INDIAN.swift; sourceTree = "<group>"; };
+		256DC9F523BA36B000F77B96 /* KOREAN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KOREAN.swift; sourceTree = "<group>"; };
+		256DC9F623BA36B000F77B96 /* HUNGARY.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUNGARY.swift; sourceTree = "<group>"; };
+		256DC9F723BA36B000F77B96 /* ROMANIA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROMANIA.swift; sourceTree = "<group>"; };
+		256DC9F823BA36B000F77B96 /* UNITEDKINGDOM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UNITEDKINGDOM.swift; sourceTree = "<group>"; };
+		256DC9F923BA36B000F77B96 /* UNITEDSTATES.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UNITEDSTATES.swift; sourceTree = "<group>"; };
+		256DC9FA23BA36B000F77B96 /* CANADA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CANADA.swift; sourceTree = "<group>"; };
+		256DC9FB23BA36B000F77B96 /* BEGIUM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEGIUM.swift; sourceTree = "<group>"; };
+		256DC9FC23BA36B000F77B96 /* DANISH.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DANISH.swift; sourceTree = "<group>"; };
+		256DC9FD23BA36B000F77B96 /* IRISH.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRISH.swift; sourceTree = "<group>"; };
+		256DC9FE23BA36B000F77B96 /* FRANCE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FRANCE.swift; sourceTree = "<group>"; };
+		256DC9FF23BA36B000F77B96 /* PORTUGAL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PORTUGAL.swift; sourceTree = "<group>"; };
+		256DCA0023BA36B000F77B96 /* THAILAND.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THAILAND.swift; sourceTree = "<group>"; };
+		256DCA0123BA36B000F77B96 /* CZECK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZECK.swift; sourceTree = "<group>"; };
+		256DCA0223BA36B000F77B96 /* HINDI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HINDI.swift; sourceTree = "<group>"; };
+		256DCA0323BA36B000F77B96 /* INDONESIA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INDONESIA.swift; sourceTree = "<group>"; };
+		256DCA0423BA36B000F77B96 /* ITALY.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITALY.swift; sourceTree = "<group>"; };
+		256DCA0523BA36B000F77B96 /* FINLAND.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FINLAND.swift; sourceTree = "<group>"; };
+		256DCA0623BA36B000F77B96 /* HONGKONG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HONGKONG.swift; sourceTree = "<group>"; };
+		256DCA0723BA36B000F77B96 /* NETHERLANDS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NETHERLANDS.swift; sourceTree = "<group>"; };
+		256DCA0823BA36B000F77B96 /* BRAZIL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRAZIL.swift; sourceTree = "<group>"; };
+		256DCA0923BA36B000F77B96 /* POLAND.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POLAND.swift; sourceTree = "<group>"; };
+		256DCA0A23BA36B000F77B96 /* SAUDIARABIA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAUDIARABIA.swift; sourceTree = "<group>"; };
+		256DCA0B23BA36B000F77B96 /* SOUTHAFICA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOUTHAFICA.swift; sourceTree = "<group>"; };
+		256DCA0C23BA36B000F77B96 /* GREEK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GREEK.swift; sourceTree = "<group>"; };
+		256DCA0D23BA36B100F77B96 /* AUSTRALIAN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AUSTRALIAN.swift; sourceTree = "<group>"; };
+		256DCA0E23BA36B100F77B96 /* CHINA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHINA.swift; sourceTree = "<group>"; };
+		256DCA0F23BA36B100F77B96 /* RUSSIAN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RUSSIAN.swift; sourceTree = "<group>"; };
+		256DCA1023BA36B100F77B96 /* SPAIN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAIN.swift; sourceTree = "<group>"; };
+		256DCA1123BA36B100F77B96 /* GERMAN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GERMAN.swift; sourceTree = "<group>"; };
+		256DCA1223BA36B100F77B96 /* ISRAEL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISRAEL.swift; sourceTree = "<group>"; };
+		256DCA1323BA36B100F77B96 /* SWEDEN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWEDEN.swift; sourceTree = "<group>"; };
+		256DCA1423BA36B100F77B96 /* TAIWAN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAIWAN.swift; sourceTree = "<group>"; };
+		256DCA1523BA36B100F77B96 /* JAPAN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JAPAN.swift; sourceTree = "<group>"; };
+		256DCA1623BA36B100F77B96 /* MEXICO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MEXICO.swift; sourceTree = "<group>"; };
+		256DCA1723BA36B100F77B96 /* NORWAY.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NORWAY.swift; sourceTree = "<group>"; };
+		256DCA3F23BA3AE200F77B96 /* ListVoiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVoiceCell.swift; sourceTree = "<group>"; };
+		256DCA4023BA3AE200F77B96 /* ListVoiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListVoiceCell.xib; sourceTree = "<group>"; };
 		84D6C01823B993ED00A53FBB /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		84D6C01923B993ED00A53FBB /* TextViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextViewController.xib; sourceTree = "<group>"; };
 		84D6C01C23B993FB00A53FBB /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +212,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		256DC9E223BA332D00F77B96 /* ListVoiceViewController */ = {
+			isa = PBXGroup;
+			children = (
+				256DC9E323BA340A00F77B96 /* ListVoiceViewController.swift */,
+				256DC9E423BA340A00F77B96 /* ListVoiceViewController.xib */,
+			);
+			path = ListVoiceViewController;
+			sourceTree = "<group>";
+		};
+		256DC9F123BA369300F77B96 /* ListVoices */ = {
+			isa = PBXGroup;
+			children = (
+				256DCA0D23BA36B100F77B96 /* AUSTRALIAN.swift */,
+				256DC9FB23BA36B000F77B96 /* BEGIUM.swift */,
+				256DCA0823BA36B000F77B96 /* BRAZIL.swift */,
+				256DC9FA23BA36B000F77B96 /* CANADA.swift */,
+				256DCA0E23BA36B100F77B96 /* CHINA.swift */,
+				256DCA0123BA36B000F77B96 /* CZECK.swift */,
+				256DC9FC23BA36B000F77B96 /* DANISH.swift */,
+				256DCA0523BA36B000F77B96 /* FINLAND.swift */,
+				256DC9FE23BA36B000F77B96 /* FRANCE.swift */,
+				256DCA1123BA36B100F77B96 /* GERMAN.swift */,
+				256DCA0C23BA36B000F77B96 /* GREEK.swift */,
+				256DCA0223BA36B000F77B96 /* HINDI.swift */,
+				256DCA0623BA36B000F77B96 /* HONGKONG.swift */,
+				256DC9F623BA36B000F77B96 /* HUNGARY.swift */,
+				256DC9F423BA36B000F77B96 /* INDIAN.swift */,
+				256DCA0323BA36B000F77B96 /* INDONESIA.swift */,
+				256DC9FD23BA36B000F77B96 /* IRISH.swift */,
+				256DCA1223BA36B100F77B96 /* ISRAEL.swift */,
+				256DCA0423BA36B000F77B96 /* ITALY.swift */,
+				256DCA1523BA36B100F77B96 /* JAPAN.swift */,
+				256DC9F523BA36B000F77B96 /* KOREAN.swift */,
+				256DCA1623BA36B100F77B96 /* MEXICO.swift */,
+				256DCA0723BA36B000F77B96 /* NETHERLANDS.swift */,
+				256DCA1723BA36B100F77B96 /* NORWAY.swift */,
+				256DCA0923BA36B000F77B96 /* POLAND.swift */,
+				256DC9FF23BA36B000F77B96 /* PORTUGAL.swift */,
+				256DC9F723BA36B000F77B96 /* ROMANIA.swift */,
+				256DCA0F23BA36B100F77B96 /* RUSSIAN.swift */,
+				256DCA0A23BA36B000F77B96 /* SAUDIARABIA.swift */,
+				256DC9F223BA36B000F77B96 /* SLOVAKIA.swift */,
+				256DCA0B23BA36B000F77B96 /* SOUTHAFICA.swift */,
+				256DCA1023BA36B100F77B96 /* SPAIN.swift */,
+				256DCA1323BA36B100F77B96 /* SWEDEN.swift */,
+				256DCA1423BA36B100F77B96 /* TAIWAN.swift */,
+				256DCA0023BA36B000F77B96 /* THAILAND.swift */,
+				256DC9F323BA36B000F77B96 /* TURKEY.swift */,
+				256DC9F823BA36B000F77B96 /* UNITEDKINGDOM.swift */,
+				256DC9F923BA36B000F77B96 /* UNITEDSTATES.swift */,
+			);
+			path = ListVoices;
+			sourceTree = "<group>";
+		};
+		256DCA3E23BA3AC100F77B96 /* ListVoiceCell */ = {
+			isa = PBXGroup;
+			children = (
+				256DCA3F23BA3AE200F77B96 /* ListVoiceCell.swift */,
+				256DCA4023BA3AE200F77B96 /* ListVoiceCell.xib */,
+			);
+			path = ListVoiceCell;
+			sourceTree = "<group>";
+		};
 		84D6C01323B9939B00A53FBB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +298,7 @@
 		84D6C01623B993BA00A53FBB /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				256DC9E223BA332D00F77B96 /* ListVoiceViewController */,
 				84D6C04C23B9E42900A53FBB /* Cell */,
 				84D6C04723B9DCE100A53FBB /* SelectVoice */,
 				84D6C01C23B993FB00A53FBB /* SettingViewController.swift */,
@@ -212,6 +366,7 @@
 		84D6C03323B99AFB00A53FBB /* Constant */ = {
 			isa = PBXGroup;
 			children = (
+				256DC9EF23BA366500F77B96 /* ListLanguages.swift */,
 				84D6C03423B99B0A00A53FBB /* AppConstant.swift */,
 			);
 			path = Constant;
@@ -237,6 +392,8 @@
 		84D6C04423B9ABA000A53FBB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				256DC9EC23BA35E400F77B96 /* SectionVoiceModel.swift */,
+				256DC9EB23BA35E400F77B96 /* VoiceModel.swift */,
 				84D6C04523B9ABAD00A53FBB /* HistoryModel.swift */,
 			);
 			path = Model;
@@ -254,6 +411,7 @@
 		84D6C04C23B9E42900A53FBB /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				256DCA3E23BA3AC100F77B96 /* ListVoiceCell */,
 				84D6C05C23B9ECDC00A53FBB /* HeaderCell */,
 				84D6C04E23B9E43900A53FBB /* ControlCell */,
 				84D6C04D23B9E43200A53FBB /* NormalCell */,
@@ -312,6 +470,7 @@
 			isa = PBXGroup;
 			children = (
 				DBBA702C23B78F2700BEC38D /* AppDelegate.swift */,
+				256DC9F123BA369300F77B96 /* ListVoices */,
 				84D6C04423B9ABA000A53FBB /* Model */,
 				84D6C03323B99AFB00A53FBB /* Constant */,
 				84D6C02423B9958000A53FBB /* Components */,
@@ -447,9 +606,11 @@
 			files = (
 				DBBA703723B78F2800BEC38D /* LaunchScreen.storyboard in Resources */,
 				84D6C03023B9964700A53FBB /* ControlBar.xib in Resources */,
+				256DCA4223BA3AE200F77B96 /* ListVoiceCell.xib in Resources */,
 				84D6C04123B9A64E00A53FBB /* TextTableViewCell.xib in Resources */,
 				84D6C04B23B9DD0400A53FBB /* SelectVoiceViewController.xib in Resources */,
 				84D6C01F23B993FB00A53FBB /* SettingViewController.xib in Resources */,
+				256DC9E623BA340A00F77B96 /* ListVoiceViewController.xib in Resources */,
 				84D6C05623B9E51D00A53FBB /* NormalTableViewCell.xib in Resources */,
 				84D6C02323B9940800A53FBB /* StarViewController.xib in Resources */,
 				DBBA703423B78F2800BEC38D /* Assets.xcassets in Resources */,
@@ -480,24 +641,67 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				256DCA2123BA36B100F77B96 /* BEGIUM.swift in Sources */,
+				256DCA2623BA36B100F77B96 /* THAILAND.swift in Sources */,
+				256DCA2B23BA36B100F77B96 /* FINLAND.swift in Sources */,
 				84D6C05523B9E51D00A53FBB /* NormalTableViewCell.swift in Sources */,
+				256DCA2D23BA36B100F77B96 /* NETHERLANDS.swift in Sources */,
+				256DCA1823BA36B100F77B96 /* SLOVAKIA.swift in Sources */,
+				256DC9F023BA366600F77B96 /* ListLanguages.swift in Sources */,
+				256DCA1923BA36B100F77B96 /* TURKEY.swift in Sources */,
+				256DCA4123BA3AE200F77B96 /* ListVoiceCell.swift in Sources */,
 				84D6C03523B99B0A00A53FBB /* AppConstant.swift in Sources */,
+				256DCA2823BA36B100F77B96 /* HINDI.swift in Sources */,
 				84D6C03C23B9A1DF00A53FBB /* String+Extention.swift in Sources */,
+				256DCA3A23BA36B100F77B96 /* TAIWAN.swift in Sources */,
+				256DCA3223BA36B100F77B96 /* GREEK.swift in Sources */,
 				84D6C04323B9A66700A53FBB /* UITableView+Extention.swift in Sources */,
+				256DCA2223BA36B100F77B96 /* DANISH.swift in Sources */,
 				84D6C05E23B9ECEA00A53FBB /* HeaderCell.swift in Sources */,
+				256DCA3B23BA36B100F77B96 /* JAPAN.swift in Sources */,
 				84D6C02723B995AC00A53FBB /* BaseViewXib.swift in Sources */,
+				256DCA2723BA36B100F77B96 /* CZECK.swift in Sources */,
+				256DCA1B23BA36B100F77B96 /* KOREAN.swift in Sources */,
 				DBBA702D23B78F2700BEC38D /* AppDelegate.swift in Sources */,
+				256DCA3823BA36B100F77B96 /* ISRAEL.swift in Sources */,
+				256DCA3123BA36B100F77B96 /* SOUTHAFICA.swift in Sources */,
 				84D6C04A23B9DD0400A53FBB /* SelectVoiceViewController.swift in Sources */,
 				84D6C01A23B993ED00A53FBB /* TextViewController.swift in Sources */,
 				84D6C01E23B993FB00A53FBB /* SettingViewController.swift in Sources */,
+				256DCA2423BA36B100F77B96 /* FRANCE.swift in Sources */,
+				256DCA2923BA36B100F77B96 /* INDONESIA.swift in Sources */,
+				256DCA3C23BA36B100F77B96 /* MEXICO.swift in Sources */,
+				256DC9ED23BA35E400F77B96 /* VoiceModel.swift in Sources */,
 				84D6C04023B9A64E00A53FBB /* TextTableViewCell.swift in Sources */,
+				256DCA3D23BA36B100F77B96 /* NORWAY.swift in Sources */,
+				256DCA2523BA36B100F77B96 /* PORTUGAL.swift in Sources */,
+				256DCA3923BA36B100F77B96 /* SWEDEN.swift in Sources */,
 				84D6C02E23B9963300A53FBB /* ControlBar.swift in Sources */,
 				84D6C03823B99FED00A53FBB /* UserDefaultHelper.swift in Sources */,
+				256DCA2E23BA36B100F77B96 /* BRAZIL.swift in Sources */,
+				256DCA1C23BA36B100F77B96 /* HUNGARY.swift in Sources */,
 				84D6C03223B998B200A53FBB /* BaseViewController.swift in Sources */,
+				256DCA3723BA36B100F77B96 /* GERMAN.swift in Sources */,
+				256DCA3423BA36B100F77B96 /* CHINA.swift in Sources */,
+				256DCA2F23BA36B100F77B96 /* POLAND.swift in Sources */,
+				256DCA2023BA36B100F77B96 /* CANADA.swift in Sources */,
 				84D6C02223B9940800A53FBB /* StarViewController.swift in Sources */,
 				84D6C05923B9E5B300A53FBB /* ControlTableViewCell.swift in Sources */,
 				84D6C04623B9ABAD00A53FBB /* HistoryModel.swift in Sources */,
+				256DCA1D23BA36B100F77B96 /* ROMANIA.swift in Sources */,
+				256DC9E523BA340A00F77B96 /* ListVoiceViewController.swift in Sources */,
+				256DCA1A23BA36B100F77B96 /* INDIAN.swift in Sources */,
+				256DCA2A23BA36B100F77B96 /* ITALY.swift in Sources */,
+				256DCA2323BA36B100F77B96 /* IRISH.swift in Sources */,
+				256DC9EE23BA35E400F77B96 /* SectionVoiceModel.swift in Sources */,
+				256DCA1E23BA36B100F77B96 /* UNITEDKINGDOM.swift in Sources */,
+				256DCA2C23BA36B100F77B96 /* HONGKONG.swift in Sources */,
+				256DCA1F23BA36B100F77B96 /* UNITEDSTATES.swift in Sources */,
 				84D6C02A23B995EA00A53FBB /* UIView+Extention.swift in Sources */,
+				256DCA3523BA36B100F77B96 /* RUSSIAN.swift in Sources */,
+				256DCA3023BA36B100F77B96 /* SAUDIARABIA.swift in Sources */,
+				256DCA3623BA36B100F77B96 /* SPAIN.swift in Sources */,
+				256DCA3323BA36B100F77B96 /* AUSTRALIAN.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,6 +869,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SRSNPE33B8;
 				INFOPLIST_FILE = TextToSpeak/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -682,6 +887,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SRSNPE33B8;
 				INFOPLIST_FILE = TextToSpeak/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

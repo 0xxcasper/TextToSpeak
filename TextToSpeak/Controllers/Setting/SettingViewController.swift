@@ -80,4 +80,10 @@ extension SettingViewController : UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(indexPath.section == 0 && indexPath.row == 0) {
+            self.present(ListVoiceViewController(), animated: true, completion: nil)
+        }
+    }
 }
