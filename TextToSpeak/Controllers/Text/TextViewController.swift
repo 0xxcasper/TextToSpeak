@@ -46,8 +46,6 @@ class TextViewController: BaseViewController {
     override func keyboardWillHide(_ notification: NSNotification) {
         bottomAnchorControllBar.constant = 0
         view.layoutIfNeeded()
-        self.resetControlBar()
-        self.resetTextView()
     }
 }
 
@@ -222,10 +220,20 @@ extension TextViewController: ControlBarDelegate
                             // done
                         } else {
                             do {
-                                let output = try AVAudioFile(forWriting: URL(fileURLWithPath: "test.wav"),settings: pcmBuffer.format.settings, commonFormat: .pcmFormatInt16, interleaved: false)
-                                try output.write(from: pcmBuffer)
-                            } catch {
+                                let SAMPLE_RATE =  Float64(16000.0)
+
+                                let outputFormatSettings = [
+                                    AVFormatIDKey:kAudioFormatLinearPCM,
+                                    AVLinearPCMBitDepthKey:32,
+                                    AVLinearPCMIsFloatKey: true,
+                                    AVSampleRateKey: SAMPLE_RATE,
+                                    AVNumberOfChannelsKey: 1
+                                    ] as [String : Any]
                                 
+                                let output = try AVAudioFile(forWriting: URL(fileURLWithPath: "test.wav"), settings: outputFormatSettings, commonFormat: .pcmFormatFloat32, interleaved: true)
+                                try output.write(from: pcmBuffer)
+                            } catch let error {
+                                print(error.localizedDescription)
                             }
                             
                         }
