@@ -12,6 +12,7 @@ struct VoiceModel {
 
     var name : String!
     var voice : String!
+    var isPlaying : Bool = false
 
     init(fromDictionary dictionary: [String:Any]) {
         name = dictionary["name"] as? String
@@ -28,5 +29,8 @@ struct VoiceModel {
         }
         return dictionary
     }
-
+    
+    mutating func setIsPlaying(_ isPlay: Bool) {
+        isPlaying = isPlay
+    }
 }

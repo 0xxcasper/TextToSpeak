@@ -23,7 +23,7 @@ struct Constant {
 
 let TITLE                       = "title"
 let CODE                        = "code"
-let DEFAULT                     = "default"
+let HELLO                       = "hello"
 let LIST_VOICES                 = "listVoices"
 let NAME                        = "name"
 let VOICE                       = "voice"

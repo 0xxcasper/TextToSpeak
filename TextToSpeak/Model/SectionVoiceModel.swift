@@ -13,7 +13,8 @@ struct SectionVoiceModel{
     var code : String!
     var listVoices : [VoiceModel]!
     var title : String!
-
+    var hello: String!
+    
     init(fromDictionary dictionary: [String:Any]) {
         code = dictionary["code"] as? String
         listVoices = [VoiceModel]()
@@ -24,6 +25,7 @@ struct SectionVoiceModel{
             }
         }
         title = dictionary["title"] as? String
+        hello = dictionary["hello"] as? String
     }
 
     func toDictionary() -> [String:Any] {
@@ -40,6 +42,9 @@ struct SectionVoiceModel{
         }
         if title != nil{
             dictionary["title"] = title
+        }
+        if hello != nil{
+            dictionary["hello"] = hello
         }
         return dictionary
     }

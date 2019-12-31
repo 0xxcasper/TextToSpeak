@@ -9,14 +9,19 @@
 import UIKit
 
 protocol ListVoiceCellDelegate: class {
-    func didSelectedVoiceCell(index: IndexPath)
+    func didSelectedVoiceCell(index: IndexPath, isPlay: Bool)
 }
 
 class ListVoiceCell: UITableViewCell {
 
-    
     @IBOutlet weak var imvPlaySound: UIImageView!
     @IBOutlet weak var lbl_Title: UILabel!
+    
+    var isPlay: Bool! = false {
+        didSet {
+            imvPlaySound.image = isPlay ? #imageLiteral(resourceName: "pause") : #imageLiteral(resourceName: "play")
+        }
+    }
     
     weak var delegate: ListVoiceCellDelegate?
     private var index: IndexPath?
@@ -34,9 +39,14 @@ class ListVoiceCell: UITableViewCell {
         self.index = index
         self.item = item
         lbl_Title.text = item.name
+        isPlay = item.isPlaying
     }
     
     private func setupView() {
         
+    }
+    @IBAction func onTapPlaySound(_ sender: Any) {
+        self.isPlay = !self.isPlay
+        delegate?.didSelectedVoiceCell(index: self.index!, isPlay: self.isPlay)
     }
 }

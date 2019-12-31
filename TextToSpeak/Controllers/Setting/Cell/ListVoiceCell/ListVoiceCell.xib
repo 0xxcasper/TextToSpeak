@@ -33,13 +33,23 @@
                                     <constraint firstAttribute="width" constant="20" id="pXo-x8-3Kj"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b68-Ko-wfw">
+                                <rect key="frame" x="16" y="46" width="20" height="20"/>
+                                <connections>
+                                    <action selector="onTapPlaySound:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="htz-FP-GSv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="b68-Ko-wfw" firstAttribute="trailing" secondItem="owC-y8-olb" secondAttribute="trailing" id="1Lj-es-gQi"/>
                             <constraint firstItem="owC-y8-olb" firstAttribute="leading" secondItem="huj-F8-zGe" secondAttribute="leading" constant="16" id="3J9-xh-Oqh"/>
                             <constraint firstItem="lOa-lE-gKn" firstAttribute="leading" secondItem="owC-y8-olb" secondAttribute="trailing" constant="20" id="QTi-xq-cKE"/>
                             <constraint firstItem="owC-y8-olb" firstAttribute="centerY" secondItem="huj-F8-zGe" secondAttribute="centerY" id="eFE-C7-Jv9"/>
+                            <constraint firstItem="b68-Ko-wfw" firstAttribute="top" secondItem="owC-y8-olb" secondAttribute="top" id="h2X-eW-oLM"/>
                             <constraint firstItem="lOa-lE-gKn" firstAttribute="centerY" secondItem="huj-F8-zGe" secondAttribute="centerY" id="mDo-P8-eXt"/>
+                            <constraint firstItem="b68-Ko-wfw" firstAttribute="leading" secondItem="owC-y8-olb" secondAttribute="leading" id="tOs-ub-6Jm"/>
+                            <constraint firstItem="b68-Ko-wfw" firstAttribute="bottom" secondItem="owC-y8-olb" secondAttribute="bottom" id="uxy-0m-QbX"/>
                         </constraints>
                     </view>
                 </subviews>
