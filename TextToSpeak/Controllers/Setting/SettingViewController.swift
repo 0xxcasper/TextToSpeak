@@ -37,6 +37,10 @@ class SettingViewController: UIViewController {
         tbView.dataSource = self
         tbView.delegate = self
     }
+    
+    func reloadData() {
+        tbView.reloadData()
+    }
 }
 
 extension SettingViewController : UITableViewDataSource, UITableViewDelegate
@@ -60,6 +64,7 @@ extension SettingViewController : UITableViewDataSource, UITableViewDelegate
             switch voices[indexPath.row] {
             case .normal:
                 let cell = tbView.dequeue(NormalTableViewCell.self, for: indexPath)
+                cell.setupCell()
                 return cell
             default:
                 let cell = tbView.dequeue(ControlTableViewCell.self, for: indexPath)
@@ -69,6 +74,12 @@ extension SettingViewController : UITableViewDataSource, UITableViewDelegate
         default:
             return UITableViewCell()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = ListVoiceViewController()
+        vc.mContext = self
+        self.present(vc, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
