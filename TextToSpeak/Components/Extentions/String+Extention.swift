@@ -13,10 +13,10 @@ extension String
 {
     func configAVSpeechUtterance() -> AVSpeechUtterance {
         let utterance = AVSpeechUtterance(string: self)
-        if let languageCode = UserDefaultHelper.shared.languageCode {
-            utterance.voice = AVSpeechSynthesisVoice(language: languageCode)
+        if let languageCode = UserDefaultHelper.shared.voiceCode {
+            utterance.voice = AVSpeechSynthesisVoice(identifier: languageCode)
         } else {
-            utterance.voice = AVSpeechSynthesisVoice(language: AVSpeechSynthesisVoice.currentLanguageCode())
+            utterance.voice = AVSpeechSynthesisVoice(identifier: AVSpeechSynthesisVoice.currentLanguageCode())
         }
         if let rate = UserDefaultHelper.shared.rate {
             utterance.rate = rate

@@ -8,10 +8,13 @@
 
 import Foundation
 
+
 private enum UserDefaultHelperKey: String {
     case languageCode = "Code"
     case rate = "Rate"
     case pitch = "Pitch"
+    case voiceCode = "voiceCode"
+    case nameVoice = "nameVoice"
 }
 
 class UserDefaultHelper {
@@ -46,6 +49,26 @@ class UserDefaultHelper {
         }
         set(pitch) {
             save(value: pitch, key: .pitch)
+        }
+    }
+    
+    var voiceCode: String? {
+        get {
+            let value = get(key: .voiceCode) as? String ?? Arthur_Bundle
+            return value
+        }
+        set(rate) {
+            save(value: rate, key: .voiceCode)
+        }
+    }
+    
+    var nameVoice: String? {
+        get {
+            let value = get(key: .nameVoice) as? String ?? Arthur + " - " + STR_UNITED_KINGDOM
+            return value
+        }
+        set(rate) {
+            save(value: rate, key: .nameVoice)
         }
     }
 }
