@@ -33,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let tabbar = UITabBarController()
         tabbar.viewControllers = [starVC, textVC, settingVC]
+        tabbar.selectedIndex = 1
         
         window?.rootViewController = tabbar
         

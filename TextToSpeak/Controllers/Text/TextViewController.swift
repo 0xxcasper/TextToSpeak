@@ -206,41 +206,55 @@ extension TextViewController: ControlBarDelegate
     }
     
     func didTapMoreControlBar() {
-        
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 
-        alert.addAction(UIAlertAction(title: "Export Audio", style: .default , handler:{ (UIAlertAction)in
-            if #available(iOS 13.0, *) {
+        if #available(iOS 13.0, *) {
+            alert.addAction(UIAlertAction(title: "Export Audio", style: .default , handler:{ (UIAlertAction)in
                 if let text = self.txView.text {
-                    self.synthesizer.write(text.configAVSpeechUtterance()) { (buffer) in
-                        guard let pcmBuffer = buffer as? AVAudioPCMBuffer else {
-                            fatalError("unknown buffer type: \(buffer)")
+                    var output: AVAudioFile?
+                    
+                    let folderName = "MyFolder"
+                    let fileManager = FileManager.default
+                    let documentsFolder = try! fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+                    let folderURL = documentsFolder.appendingPathComponent(folderName)
+                    let folderExists = (try? folderURL.checkResourceIsReachable()) ?? false
+                    do {
+                        if !folderExists {
+                            try fileManager.createDirectory(at: folderURL, withIntermediateDirectories: false)
                         }
-                        if pcmBuffer.frameLength == 0 {
-                            // done
-                        } else {
-                            do {
-                                let SAMPLE_RATE =  Float64(16000.0)
+                        let url = folderURL.appendingPathComponent("TextToSpeech.wav")
+                        let utterance = text.configAVSpeechUtterance()
 
-                                let outputFormatSettings = [
-                                    AVFormatIDKey:kAudioFormatLinearPCM,
-                                    AVLinearPCMBitDepthKey:32,
-                                    AVLinearPCMIsFloatKey: true,
-                                    AVSampleRateKey: SAMPLE_RATE,
-                                    AVNumberOfChannelsKey: 1
-                                    ] as [String : Any]
-                                
-                                let output = try AVAudioFile(forWriting: URL(fileURLWithPath: "test.wav"), settings: outputFormatSettings, commonFormat: .pcmFormatFloat32, interleaved: true)
-                                try output.write(from: pcmBuffer)
-                            } catch let error {
-                                print(error.localizedDescription)
+                        let outputFormatSettings = utterance.voice!.audioFileSettings
+                        
+                        output = try AVAudioFile(forWriting: url, settings: outputFormatSettings, commonFormat: .pcmFormatInt16, interleaved: true)
+                        
+                        // Show progress
+                        self.synthesizer.write(utterance) { (buffer) in
+                            guard let pcmBuffer = buffer as? AVAudioPCMBuffer else {
+                                fatalError("Unknown buffer type: \(buffer)")
                             }
-                            
+                            if pcmBuffer.frameLength == 0 {
+                                DispatchQueue.main.async {
+                                    // Hide progress
+                                    let activityViewController = UIActivityViewController(activityItems: [url as Any], applicationActivities: nil)
+                                    self.present(activityViewController, animated: true, completion: nil)
+                                }
+                            } else {
+                                do {
+                                    try output?.write(from: pcmBuffer)
+                                    
+                                } catch let error {
+                                    print(error.localizedDescription)
+                                }
+                            }
                         }
+                    } catch {
+                        print(error)
                     }
                 }
-            }
-        }))
+            }))
+        }
 
         alert.addAction(UIAlertAction(title: "Add to Starred", style: .default , handler:{ (UIAlertAction)in
             
