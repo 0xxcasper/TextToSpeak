@@ -18,6 +18,7 @@ class ControlTableViewCell: UITableViewCell {
     
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var bgView: UIView!
     
     var type: ControlType! = .rate {
         didSet {
@@ -32,7 +33,7 @@ class ControlTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        bgView.addShadowBottom()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

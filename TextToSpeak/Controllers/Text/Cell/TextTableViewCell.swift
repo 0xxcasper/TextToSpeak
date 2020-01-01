@@ -31,7 +31,7 @@ class TextTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        viewBg.addShadow()
+        viewBg.addShadowBottom()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

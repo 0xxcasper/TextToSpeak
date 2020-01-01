@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ba-eT-KF7">
-                        <rect key="frame" x="16" y="8" width="288" height="28"/>
+                        <rect key="frame" x="0.0" y="8" width="320" height="28"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Q7-an-29A">
@@ -45,16 +45,17 @@
                         </connections>
                     </button>
                 </subviews>
+                <color key="backgroundColor" red="0.95294117647058818" green="0.95686274509803915" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="y5X-iH-rSx" firstAttribute="leading" secondItem="5Q7-an-29A" secondAttribute="trailing" constant="8" id="6DW-vt-x7H"/>
                     <constraint firstAttribute="trailing" secondItem="y5X-iH-rSx" secondAttribute="trailing" constant="32" id="L9c-h8-g5Y"/>
                     <constraint firstItem="y5X-iH-rSx" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="M7K-B7-2aH"/>
                     <constraint firstItem="y5X-iH-rSx" firstAttribute="leading" secondItem="Pb1-LT-cxI" secondAttribute="trailing" constant="8" id="ViN-CG-A4h"/>
-                    <constraint firstAttribute="trailing" secondItem="0ba-eT-KF7" secondAttribute="trailing" constant="16" id="WAF-yj-cg5"/>
+                    <constraint firstAttribute="trailing" secondItem="0ba-eT-KF7" secondAttribute="trailing" id="WAF-yj-cg5"/>
                     <constraint firstItem="5Q7-an-29A" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Z02-tD-3Ah"/>
                     <constraint firstItem="Pb1-LT-cxI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ZYy-tI-e9c"/>
                     <constraint firstAttribute="bottom" secondItem="Pb1-LT-cxI" secondAttribute="bottom" id="fZz-99-3Y6"/>
-                    <constraint firstItem="0ba-eT-KF7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="gy9-Wf-saN"/>
+                    <constraint firstItem="0ba-eT-KF7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="gy9-Wf-saN"/>
                     <constraint firstItem="Pb1-LT-cxI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="hXP-YN-D6p"/>
                     <constraint firstAttribute="bottom" secondItem="0ba-eT-KF7" secondAttribute="bottom" constant="8" id="jqF-K0-wUK"/>
                     <constraint firstItem="5Q7-an-29A" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="kNK-Cb-5wj"/>

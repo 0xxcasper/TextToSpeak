@@ -23,7 +23,7 @@ class SettingViewController: UIViewController {
     
     @IBOutlet weak var tbView: UITableView!
     
-    var sections = [SectionType.voice, SectionType.setting, SectionType.other]
+    var sections = [SectionType.voice]
     var voices = [SettingType.normal, SettingType.control, SettingType.control]
     
     override func viewDidLoad() {
@@ -32,6 +32,7 @@ class SettingViewController: UIViewController {
     }
     
     private func setUpTableViews() {
+        tbView.separatorStyle = .none
         tbView.registerXibFile(NormalTableViewCell.self)
         tbView.registerXibFile(ControlTableViewCell.self)
         tbView.dataSource = self
@@ -77,9 +78,11 @@ extension SettingViewController : UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = ListVoiceViewController()
-        vc.mContext = self
-        self.present(vc, animated: true, completion: nil)
+        if(indexPath.section == 0 && indexPath.row == 0) {
+            let vc = ListVoiceViewController()
+            vc.mContext = self
+            self.present(vc, animated: true, completion: nil)
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

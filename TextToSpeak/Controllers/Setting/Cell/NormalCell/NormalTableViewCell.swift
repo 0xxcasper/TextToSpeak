@@ -12,9 +12,11 @@ import AVFoundation
 class NormalTableViewCell: UITableViewCell {
 
     @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var bgView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        bgView.addShadowBottom()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

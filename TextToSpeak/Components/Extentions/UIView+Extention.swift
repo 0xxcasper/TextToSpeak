@@ -35,6 +35,14 @@ extension UIView {
         layer.shadowOpacity = opacity
         layer.masksToBounds = false
     }
+    
+    func addShadowBottom() {
+        self.backgroundColor = .white
+        self.layer.shadowColor = UIColor.gray.cgColor
+        self.layer.shadowOpacity = 0.5
+        self.layer.shadowRadius = 2
+        self.layer.shadowOffset = CGSize(width: 0, height: 1)
+    }
 }
 
 // MARK: Auto Layout

@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import RealmSwift
 
 class TextViewController: BaseViewController {
     // MARK: - View Elements
@@ -16,20 +17,24 @@ class TextViewController: BaseViewController {
     @IBOutlet weak var controlBar: ControlBar!
     @IBOutlet weak var bottomAnchorControllBar: NSLayoutConstraint!
     @IBOutlet weak var heightAnchorTxView: NSLayoutConstraint!
+    @IBOutlet weak var viewBg: UIView!
     
     // MARK: - Properties
     private var synthesizer = AVSpeechSynthesizer()
-    private var data = [HistoryModel]()
+    private var data: [HistoryModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViews()
         setUpTableView()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getAllData()
+    }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        txView.addShadow()
     }
     
     // MARK: - Handle Keyboard
@@ -51,9 +56,15 @@ class TextViewController: BaseViewController {
 
 // MARK: - Private 's Method
 
-private extension TextViewController
-{
+private extension TextViewController {
+    func getAllData() {
+        data = Array(HistoryModel.getAll())
+        data.reverse()
+        self.tbView.reloadData()
+    }
+    
     func setUpViews() {
+        viewBg.addShadowBottom()
         txView.textColor = .lightGray
         txView.text = "Tap here to type!"
         txView.delegate = self
@@ -63,7 +74,7 @@ private extension TextViewController
     
     func setUpTableView() {
         tbView.registerXibFile(TextTableViewCell.self)
-        tbView.rowHeight = 50
+        tbView.rowHeight = 60
         tbView.separatorStyle = .none
         tbView.dataSource = self
         tbView.delegate = self
@@ -136,7 +147,8 @@ extension TextViewController: UITableViewDataSource, UITableViewDelegate, TextTa
     }
     
     func didTapStarCell(_ index: Int) {
-        self.data[index].isStar.toggle()
+//        self.data![index].isStar.toggle()
+        self.data[index].edit()
         self.tbView.reloadData()
     }
 }
@@ -181,10 +193,8 @@ extension TextViewController: ControlBarDelegate
         if !text.isEmpty && !synthesizer.isPaused {
             self.textToSpeech(text)
             if !data.contains(where: {$0.text == text}) {
-                let hisModel = HistoryModel(text: text, isStar: false)
-                self.data.append(hisModel)
-                self.data = data.reversed()
-                self.tbView.reloadData()
+                let _ = HistoryModel.add(text: text, isStar: false)
+                self.getAllData()
             }
         } else {
             synthesizer.continueSpeaking()
@@ -295,4 +305,10 @@ extension TextViewController: AVSpeechSynthesizerDelegate
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didContinue utterance: AVSpeechUtterance) {
         self.controlBar.isPlay = false
     }
+}
+
+//MARK: -Handle REALM
+
+extension TextViewController {
+    
 }
