@@ -16,4 +16,5 @@ target 'TextToSpeak' do
     # Pods for testing
   end
 pod 'RealmSwift'
+pod 'SVProgressHUD'
 end

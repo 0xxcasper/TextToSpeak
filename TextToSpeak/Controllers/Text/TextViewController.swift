@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import RealmSwift
+import SVProgressHUD
 
 class TextViewController: BaseViewController {
     // MARK: - View Elements
@@ -240,6 +241,7 @@ extension TextViewController: ControlBarDelegate
                         output = try AVAudioFile(forWriting: url, settings: outputFormatSettings, commonFormat: .pcmFormatInt16, interleaved: true)
                         
                         // Show progress
+                        SVProgressHUD.show(withStatus: "Exporting...")
                         self.synthesizer.write(utterance) { (buffer) in
                             guard let pcmBuffer = buffer as? AVAudioPCMBuffer else {
                                 fatalError("Unknown buffer type: \(buffer)")
@@ -247,6 +249,7 @@ extension TextViewController: ControlBarDelegate
                             if pcmBuffer.frameLength == 0 {
                                 DispatchQueue.main.async {
                                     // Hide progress
+                                    SVProgressHUD.dismiss()
                                     let activityViewController = UIActivityViewController(activityItems: [url as Any], applicationActivities: nil)
                                     self.present(activityViewController, animated: true, completion: nil)
                                 }
@@ -267,12 +270,25 @@ extension TextViewController: ControlBarDelegate
         }
 
         alert.addAction(UIAlertAction(title: "Add to Starred", style: .default , handler:{ (UIAlertAction)in
-            
+            guard let text = self.txView.text else { return }
+            if !text.isEmpty && !self.synthesizer.isPaused {
+                if !self.data.contains(where: {$0.text == text}) {
+                    let _ = HistoryModel.add(text: text, isStar: true)
+                    self.getAllData()
+                }
+            }
         }))
         
         alert.addAction(UIAlertAction(title: "Copy to Clipboard", style: .default , handler:{ (UIAlertAction)in
+            if let text = self.txView.text {
+                UIPasteboard.general.string = text
+            }
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel , handler:{ (UIAlertAction)in
             
         }))
+        
         self.present(alert, animated: true, completion: nil)
     }
 }
