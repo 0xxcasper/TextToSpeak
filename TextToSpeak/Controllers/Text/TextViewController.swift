@@ -152,6 +152,13 @@ extension TextViewController: UITableViewDataSource, UITableViewDelegate, TextTa
         self.data[index].edit()
         self.tbView.reloadData()
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            data[indexPath.row].delete()
+            getAllData()
+        }
+    }
 }
 
 // MARK: - UITextFieldDelegate's Method

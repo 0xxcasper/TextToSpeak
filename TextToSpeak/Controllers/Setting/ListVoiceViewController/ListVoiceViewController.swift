@@ -9,8 +9,6 @@
 import UIKit
 import AVFoundation
 
-let NAME_VOICE_NOTI = "NAME_VOICE_NOTI"
-
 class ListVoiceViewController: BaseViewController {
     @IBOutlet weak var tbView: UITableView!
 
