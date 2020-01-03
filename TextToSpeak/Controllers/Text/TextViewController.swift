@@ -246,7 +246,7 @@ extension TextViewController: ControlBarDelegate
 
                         let outputFormatSettings = utterance.voice!.audioFileSettings
                         
-                        output = try AVAudioFile(forWriting: url, settings: outputFormatSettings, commonFormat: .otherFormat, interleaved: true)
+                        output = try AVAudioFile(forWriting: url, settings: outputFormatSettings, commonFormat: .pcmFormatInt16, interleaved: true)
                         
                         // Show progress
                         SVProgressHUD.show(withStatus: "Exporting...")
