@@ -244,9 +244,19 @@ extension TextViewController: ControlBarDelegate
                         let url = folderURL.appendingPathComponent("TextToSpeech.wav")
                         let utterance = text.configAVSpeechUtterance()
 
-                        let outputFormatSettings = utterance.voice!.audioFileSettings
+//                        let outputFormatSettings = utterance.voice!.audioFileSettings
                         
-                        output = try AVAudioFile(forWriting: url, settings: outputFormatSettings, commonFormat: .otherFormat, interleaved: true)
+                        let SAMPLE_RATE =  Float64(16000.0)
+
+                        let outputFormatSettings = [
+                            AVFormatIDKey:kAudioFormatLinearPCM,
+                            AVLinearPCMBitDepthKey:32,
+                            AVLinearPCMIsFloatKey: true,
+                            AVSampleRateKey: SAMPLE_RATE,
+                            AVNumberOfChannelsKey: 1
+                            ] as [String : Any]
+                        
+                        output = try AVAudioFile(forWriting: url, settings: outputFormatSettings, commonFormat: .pcmFormatInt16, interleaved: true)
                         
                         // Show progress
                         SVProgressHUD.show(withStatus: "Exporting...")
