@@ -254,11 +254,11 @@ extension TextViewController: ControlBarDelegate
                             guard let pcmBuffer = buffer as? AVAudioPCMBuffer else {
                                 fatalError("Unknown buffer type: \(buffer)")
                             }
-                            if pcmBuffer.frameLength == 0 {
-                                SVProgressHUD.dismiss()
-                                let activityViewController = UIActivityViewController(activityItems: [url as Any], applicationActivities: nil)
-                                self.present(activityViewController, animated: true) {
-                                    self.removeFile(url: url)
+                            if pcmBuffer.frameLength <= 0 {
+                                DispatchQueue.main.async {
+                                    SVProgressHUD.dismiss()
+                                    let activityViewController = UIActivityViewController(activityItems: [url as Any], applicationActivities: nil)
+                                    self.present(activityViewController, animated: true, completion: nil)
                                 }
                             } else {
                                 do {
@@ -297,14 +297,6 @@ extension TextViewController: ControlBarDelegate
         }))
         
         self.present(alert, animated: true, completion: nil)
-    }
-    
-    private func removeFile(url: URL) {
-        do {
-            try FileManager.default.removeItem(at: url)
-        } catch {
-            
-        }
     }
 }
 
