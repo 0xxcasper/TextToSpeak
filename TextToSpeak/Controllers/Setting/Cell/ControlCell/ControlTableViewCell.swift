@@ -14,11 +14,17 @@ enum ControlType {
     case pitch
 }
 
+protocol ControlTableViewCellDelegate: class {
+    func onChangeSLider()
+}
+
 class ControlTableViewCell: UITableViewCell {
     
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var bgView: UIView!
+    
+    weak var delegate: ControlTableViewCellDelegate?
     
     var type: ControlType! = .rate {
         didSet {
@@ -48,5 +54,7 @@ class ControlTableViewCell: UITableViewCell {
         } else {
             UserDefaultHelper.shared.pitch = sender.value
         }
+        
+        delegate?.onChangeSLider()
     }
 }

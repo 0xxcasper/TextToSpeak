@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 enum SectionType: String {
     case voice = "VOICE"
@@ -22,7 +23,7 @@ enum SettingType {
 class SettingViewController: UIViewController {
     
     @IBOutlet weak var tbView: UITableView!
-    
+    let synthesizer = AVSpeechSynthesizer()
     var sections = [SectionType.voice]
     var voices = [SettingType.normal, SettingType.control, SettingType.control]
     
@@ -69,6 +70,7 @@ extension SettingViewController : UITableViewDataSource, UITableViewDelegate
                 return cell
             default:
                 let cell = tbView.dequeue(ControlTableViewCell.self, for: indexPath)
+                cell.delegate = self
                 cell.type = indexPath.row == 1 ? .rate : .pitch
                 return cell
             }
@@ -93,5 +95,14 @@ extension SettingViewController : UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
+    }
+}
+
+extension SettingViewController: ControlTableViewCellDelegate {
+    func onChangeSLider() {
+        let str = "Welcome to wonderful application"
+        let utterance = str.configAVSpeechUtterance()
+        if(synthesizer.isSpeaking) { synthesizer.stopSpeaking(at: .immediate) }
+        synthesizer.speak(utterance)
     }
 }
