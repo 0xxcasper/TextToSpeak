@@ -256,6 +256,7 @@ extension TextViewController: ControlBarDelegate
                             }
                             if pcmBuffer.frameLength <= 0 {
                                 DispatchQueue.main.async {
+                                    self.textToSpeech(" ")
                                     SVProgressHUD.dismiss()
                                     let activityViewController = UIActivityViewController(activityItems: [url as Any], applicationActivities: nil)
                                     self.present(activityViewController, animated: true, completion: nil)
