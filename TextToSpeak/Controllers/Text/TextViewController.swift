@@ -255,11 +255,10 @@ extension TextViewController: ControlBarDelegate
                                 fatalError("Unknown buffer type: \(buffer)")
                             }
                             if pcmBuffer.frameLength == 0 {
-                                DispatchQueue.main.async {
-                                    // Hide progress
-                                    SVProgressHUD.dismiss()
-                                    let activityViewController = UIActivityViewController(activityItems: [url as Any], applicationActivities: nil)
-                                    self.present(activityViewController, animated: true, completion: nil)
+                                SVProgressHUD.dismiss()
+                                let activityViewController = UIActivityViewController(activityItems: [url as Any], applicationActivities: nil)
+                                self.present(activityViewController, animated: true) {
+                                    self.removeFile(url: url)
                                 }
                             } else {
                                 do {
@@ -298,6 +297,14 @@ extension TextViewController: ControlBarDelegate
         }))
         
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func removeFile(url: URL) {
+        do {
+            try FileManager.default.removeItem(at: url)
+        } catch {
+            
+        }
     }
 }
 
