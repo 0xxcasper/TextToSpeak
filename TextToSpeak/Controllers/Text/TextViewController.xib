@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="bottomAnchorControllBar" destination="9aa-t2-kuR" id="53J-BR-aEE"/>
                 <outlet property="controlBar" destination="KIf-Hv-ou8" id="Ia1-gR-zkk"/>
+                <outlet property="heightAnchorBgView" destination="bFg-32-JcS" id="kxD-NN-5bH"/>
                 <outlet property="heightAnchorTxView" destination="Il5-6q-Tq2" id="6as-rl-Zl8"/>
                 <outlet property="tbView" destination="bsA-rO-7cO" id="s9g-bi-gQk"/>
                 <outlet property="txView" destination="ZZO-Wv-jph" id="8Kr-fY-XTD"/>
@@ -34,7 +35,7 @@
                                 <constraint firstAttribute="height" constant="40" id="Il5-6q-Tq2"/>
                             </constraints>
                             <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                     </subviews>

@@ -18,6 +18,7 @@ class TextViewController: BaseViewController {
     @IBOutlet weak var controlBar: ControlBar!
     @IBOutlet weak var bottomAnchorControllBar: NSLayoutConstraint!
     @IBOutlet weak var heightAnchorTxView: NSLayoutConstraint!
+    @IBOutlet weak var heightAnchorBgView: NSLayoutConstraint!
     @IBOutlet weak var viewBg: UIView!
     
     // MARK: - Properties
@@ -87,7 +88,7 @@ private extension TextViewController {
     }
     
     func updateLayoutTextView(_ text: String) {
-        let font = UIFont.systemFont(ofSize: 15)
+        let font = UIFont.systemFont(ofSize: 18, weight: .medium)
         let maxSize = CGSize(width: txView.bounds.width, height: CGFloat.greatestFiniteMagnitude)
 
         let size = (text as NSString).boundingRect(with: maxSize,
@@ -95,6 +96,7 @@ private extension TextViewController {
                 attributes: [NSAttributedString.Key.font:font],
                 context: nil).size
         if size.height < 200 && size.height > 33 {
+            self.heightAnchorBgView.constant = size.height + 10 + 60
             self.heightAnchorTxView.constant = size.height + 10
             self.view.layoutIfNeeded()
         }
@@ -104,6 +106,7 @@ private extension TextViewController {
         self.txView.isEditable = true
         self.txView.text = ""
         self.textViewDidEndEditing(self.txView)
+        self.heightAnchorBgView.constant = 100
         self.heightAnchorTxView.constant = 33
         self.view.layoutIfNeeded()
     }
@@ -144,11 +147,9 @@ extension TextViewController: UITableViewDataSource, UITableViewDelegate, TextTa
         self.controlBar.isPlay = true
         self.controlBar.isEnable = true
         self.controlBar.isStop = false
-        //self.textToSpeech(data[index].text)
     }
     
     func didTapStarCell(_ index: Int) {
-//        self.data![index].isStar.toggle()
         self.data[index].edit()
         self.tbView.reloadData()
     }
@@ -245,7 +246,7 @@ extension TextViewController: ControlBarDelegate
 
                         let outputFormatSettings = utterance.voice!.audioFileSettings
                         
-                        output = try AVAudioFile(forWriting: url, settings: outputFormatSettings, commonFormat: .pcmFormatInt16, interleaved: true)
+                        output = try AVAudioFile(forWriting: url, settings: outputFormatSettings, commonFormat: .otherFormat, interleaved: true)
                         
                         // Show progress
                         SVProgressHUD.show(withStatus: "Exporting...")
