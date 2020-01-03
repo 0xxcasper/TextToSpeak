@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if #available(iOS 13.0, *) {
             window?.overrideUserInterfaceStyle = .light
         }
-        
+        SVProgressHUD.setDefaultMaskType(.clear) // Don't allow user interaction
         let starVC = StarViewController()
         starVC.tabBarItem = UITabBarItem(title: "Star", image: #imageLiteral(resourceName: "star.fill"), tag: 0)
         
